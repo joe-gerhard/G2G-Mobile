@@ -11,6 +11,7 @@ import GoogleMaps
 import Firebase
 
 class SearchViewController: UIViewController {
+    private let locationManager = CLLocationManager()
     
     var db: Firestore!
     
@@ -24,25 +25,73 @@ class SearchViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
         // Do any additional setup after loading the view.
-        print("Search view loaded")
-    }
-        // Quickstart
-    
+        locationManager.delegate = self
+        mapView.delegate = self
+        locationManager.requestWhenInUseAuthorization()
 
+    }
     
-    override func loadView() {
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
+    @IBOutlet weak var mapView: GMSMapView!
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
         
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        // 1
+        let geocoder = GMSGeocoder()
+        
+        // 2
+        geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
+            guard let address = response?.firstResult(), let lines = address.lines else {
+                return
+            }
+            
+            // 3
+            self.addressLabel.text = lines.joined(separator: "\n")
+            
+            // 4
+            UIView.animate(withDuration: 0.25) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+
+}
+
+// MARK: - CLLocationManagerDelegate
+//1
+extension SearchViewController: CLLocationManagerDelegate {
+    // 2
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // 3
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        // 4
+        locationManager.startUpdatingLocation()
+        
+        //5
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+    }
+    
+    // 6
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        // 7
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        
+        // 8
+        locationManager.stopUpdatingLocation()
+    }
+}
+
+extension SearchViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        reverseGeocodeCoordinate(position.target)
     }
     
     private func getCollection() {

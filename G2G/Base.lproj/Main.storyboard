@@ -47,25 +47,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaV-rP-LjB">
-                                <rect key="frame" x="92" y="312" width="191" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98e-PY-qNl" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sul-a2-oMp">
+                                <rect key="frame" x="16" y="518" width="343" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vaV-rP-LjB" firstAttribute="centerY" secondItem="QYd-Cl-1Zg" secondAttribute="centerY" id="aUC-Nd-KnB"/>
-                            <constraint firstItem="vaV-rP-LjB" firstAttribute="centerX" secondItem="QYd-Cl-1Zg" secondAttribute="centerX" id="aa5-3F-fa2"/>
+                            <constraint firstItem="98e-PY-qNl" firstAttribute="top" secondItem="QYd-Cl-1Zg" secondAttribute="top" id="5ZE-8D-Nxp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sul-a2-oMp" secondAttribute="trailing" id="9OY-HA-xDf"/>
+                            <constraint firstItem="Sul-a2-oMp" firstAttribute="top" secondItem="98e-PY-qNl" secondAttribute="bottom" id="FI2-eg-mJr"/>
+                            <constraint firstItem="DFl-9g-zhv" firstAttribute="bottom" secondItem="98e-PY-qNl" secondAttribute="bottom" constant="100" id="H37-7C-pNL"/>
+                            <constraint firstAttribute="trailing" secondItem="98e-PY-qNl" secondAttribute="trailing" id="U5t-2P-Vb9"/>
+                            <constraint firstItem="98e-PY-qNl" firstAttribute="leading" secondItem="QYd-Cl-1Zg" secondAttribute="leading" id="UBI-1a-XzH"/>
+                            <constraint firstItem="Sul-a2-oMp" firstAttribute="centerX" secondItem="QYd-Cl-1Zg" secondAttribute="centerX" id="Y2c-au-pot"/>
+                            <constraint firstItem="Sul-a2-oMp" firstAttribute="leading" secondItem="QYd-Cl-1Zg" secondAttribute="leadingMargin" id="aza-6D-4Qf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Sul-a2-oMp" secondAttribute="bottom" constant="50" id="xDx-Ra-4fT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DFl-9g-zhv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="search-icon" id="9Nr-fw-I1J"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="Sul-a2-oMp" id="2oy-nA-tN6"/>
+                        <outlet property="mapView" destination="98e-PY-qNl" id="ZD2-C0-UOk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vav-ot-Q0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1382" y="359"/>
+            <point key="canvasLocation" x="-1383.2" y="358.4707646176912"/>
         </scene>
         <!--More-->
         <scene sceneID="wg7-f3-ORb">
