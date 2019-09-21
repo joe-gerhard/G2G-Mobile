@@ -6,6 +6,9 @@ target 'G2G' do
   use_frameworks!
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Analytics'
   # Pods for G2G
 
   target 'G2GTests' do

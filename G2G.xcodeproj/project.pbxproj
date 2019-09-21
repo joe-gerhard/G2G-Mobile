@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		41064D59233688EE00882496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41064D57233688EE00882496 /* LaunchScreen.storyboard */; };
 		41064D64233688EE00882496 /* G2GTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41064D63233688EE00882496 /* G2GTests.swift */; };
 		41064D6F233688EE00882496 /* G2GUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41064D6E233688EE00882496 /* G2GUITests.swift */; };
+		411E99772336D87900601A2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 411E99762336D87900601A2C /* GoogleService-Info.plist */; };
+		411E99782336D87900601A2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 411E99762336D87900601A2C /* GoogleService-Info.plist */; };
+		411E99792336D87900601A2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 411E99762336D87900601A2C /* GoogleService-Info.plist */; };
 		6924BDDE216486D84E9FA772 /* Pods_G2G.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D7B240FA736E30CB0C0109 /* Pods_G2G.framework */; };
 		6C8037882DBCDDA030CA3B38 /* Pods_G2GTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD5CF9AFAC71240EF8894A /* Pods_G2GTests.framework */; };
 		7C6BCC312336913A00E1C78B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6BCC302336913A00E1C78B /* SearchViewController.swift */; };
@@ -57,6 +60,7 @@
 		41064D6A233688EE00882496 /* G2GUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = G2GUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41064D6E233688EE00882496 /* G2GUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G2GUITests.swift; sourceTree = "<group>"; };
 		41064D70233688EE00882496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		411E99762336D87900601A2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42D7B240FA736E30CB0C0109 /* Pods_G2G.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G2G.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FD5CF9AFAC71240EF8894A /* Pods_G2GTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G2GTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		645AC6CB1A91A9A893CFCF44 /* Pods_G2GUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G2GUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,7 @@
 				41064D4C233688ED00882496 /* AppDelegate.swift */,
 				41064D4E233688ED00882496 /* ProfileViewController.swift */,
 				41064D50233688ED00882496 /* MoreViewController.swift */,
+				411E99762336D87900601A2C /* GoogleService-Info.plist */,
 				41064D52233688ED00882496 /* Main.storyboard */,
 				7C6BCC322336961100E1C78B /* SavedViewController.swift */,
 				7C6BCC302336913A00E1C78B /* SearchViewController.swift */,
@@ -171,7 +176,6 @@
 				072A116A4DB984C267C896AC /* Pods-G2GUITests.debug.xcconfig */,
 				2468BE1C89BFD8A7D3EFDAED /* Pods-G2GUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -187,6 +191,7 @@
 				41064D46233688ED00882496 /* Frameworks */,
 				41064D47233688ED00882496 /* Resources */,
 				61B13DE25C9F3FF16B69D7FF /* [CP] Copy Pods Resources */,
+				117BFCF8C7D149BD3CCE1E39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41064D59233688EE00882496 /* LaunchScreen.storyboard in Resources */,
+				411E99772336D87900601A2C /* GoogleService-Info.plist in Resources */,
 				41064D56233688EE00882496 /* Assets.xcassets in Resources */,
 				41064D54233688ED00882496 /* Main.storyboard in Resources */,
 			);
@@ -293,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411E99782336D87900601A2C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,12 +307,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411E99792336D87900601A2C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		117BFCF8C7D149BD3CCE1E39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-G2G/Pods-G2G-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-G2G/Pods-G2G-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-G2G/Pods-G2G-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		11E624EBA5CA160106F4E159 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
