@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  ProfileViewController.swift
 //  G2G
 //
 //  Created by David Bae on 9/21/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
