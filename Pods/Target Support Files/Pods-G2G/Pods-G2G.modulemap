@@ -1,0 +1,6 @@
+framework module Pods_G2G {
+  umbrella header "Pods-G2G-umbrella.h"
+
+  export *
+  module * { export * }
+}
