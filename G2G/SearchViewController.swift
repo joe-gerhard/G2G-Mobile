@@ -28,7 +28,7 @@ class SearchViewController: UIViewController {
         locationManager.delegate = self
         mapView.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        addBR()
+
         
     }
     
@@ -121,14 +121,14 @@ extension SearchViewController: GMSMapViewDelegate {
             }
         }
     }
-    private func addBR() {
+    private func addBR1() {
         var ref: DocumentReference? = nil
         ref = db.collection("bathrooms").addDocument(data: [
             "type": "Starbucks",
-            "ADA": "True",
+            "ADA": true,
             "NGB": false,
-            "lat": 21,
-            "lon": 15
+            "lat": 31.268950,
+            "lon": -97.8
             ]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")
@@ -137,7 +137,153 @@ extension SearchViewController: GMSMapViewDelegate {
                 }
         }
     }
-
+    
+    private func addBR2() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "IHOP",
+            "ADA": false,
+            "NGB": false,
+            "lat": 32.268950,
+            "lon": -97.8
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
+    private func addBR3() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "Barnes and Nobles",
+            "ADA": true,
+            "NGB": true,
+            "lat": 31.48950,
+            "lon": -98.8
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
+    private func addBR4() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "Whitecastle",
+            "ADA": false,
+            "NGB": false,
+            "lat": 32.48950,
+            "lon": -96.8
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    private func addBR5() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "Starbucks",
+            "ADA": false,
+            "NGB": false,
+            "lat": 31.48950,
+            "lon": -98.8
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    private func addBR6() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "Jackalope",
+            "ADA": true,
+            "NGB": false,
+            "lat": 31.2,
+            "lon": -95.8
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    private func addBR7() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "I'm running out of places",
+            "ADA": false,
+            "NGB": false,
+            "lat": 33.48950,
+            "lon": -100.8
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    private func addBR8() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "McDonalds",
+            "ADA": true,
+            "NGB": true,
+            "lat": 29.48950,
+            "lon": -98.8
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    private func addBR9() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "Burger King",
+            "ADA": true,
+            "NGB": false,
+            "lat": 34.1351,
+            "lon": -97.1315
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    private func addBR10() {
+        var ref: DocumentReference? = nil
+        ref = db.collection("bathrooms").addDocument(data: [
+            "type": "Thistle",
+            "ADA": true,
+            "NGB": true,
+            "lat": 31.13451,
+            "lon": -97.1258
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
 }
     
     /*
