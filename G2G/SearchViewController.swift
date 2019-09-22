@@ -28,7 +28,8 @@ class SearchViewController: UIViewController {
         locationManager.delegate = self
         mapView.delegate = self
         locationManager.requestWhenInUseAuthorization()
-
+        addBR()
+        
     }
     
     @IBOutlet weak var mapView: GMSMapView!
